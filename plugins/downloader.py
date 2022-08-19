@@ -128,7 +128,7 @@ async def youtube_dl_call_back(bot, update):
         end_one = datetime.now()
         time_taken_for_download = (end_one - start).seconds
         file_size = Config.TG_MAX_FILE_SIZE + 1
-        if ((file_size > Config.TG_MAX_FILE_SIZE)):
+        if ((file_size < Config.TG_MAX_FILE_SIZE)):
             await update.message.edit_caption(
 
                 caption=Translation.RCHD_TG_API_LIMIT.format(
